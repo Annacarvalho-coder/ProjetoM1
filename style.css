@@ -1,117 +1,33 @@
-/* Estilos globais */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-#quiz-container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
+    font-family: Arial, sans-serif;
     text-align: center;
-    position: relative;
-}
-
-h1 {
-    font-size: 24px;
-    color: #333;
+  }
+  
+  #quiz-container {
+    margin: 20px auto;
+    width: 80%;
+  }
+  
+  #question {
     margin-bottom: 20px;
-}
-
-#quiz h2 {
-    font-size: 20px;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-/* Botões de respostas */
-#quiz button {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-#quiz button:hover {
-    background-color: #f0f0f0;
-}
-
-.correct {
-    background-color: #28a745;
-    color: #fff;
-}
-
-.wrong {
-    background-color: #dc3545;
-    color: #fff;
-}
-
-/* Botão de próxima pergunta */
-#next {
-    background-color: #007bff;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
-    margin-top: 20px;
-    width: 100%;
-}
+  }
 
-#next:hover {
-    background-color: #0056b3;
-}
-
-#next:disabled {
-    background-color: #6c757d;
-    cursor: not-allowed;
-}
-
-/* Estilos do footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-    #quiz-container {
-        width: 90%;
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 22px;
-    }
-
-    #quiz h2 {
-        font-size: 18px;
-    }
-
-    #quiz button, #next {
-        padding: 12px;
-        font-size: 14px;
-    }
-}
-
-
+  .selected {
+    background-color: yellow;
+  }
+  .correct {
+    background-color: green;
+  }
+  .incorrect {
+    background-color: red;
+  }
+  
