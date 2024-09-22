@@ -10,6 +10,10 @@ const questions = [
         question: "Qual é a origem da expressão bug?",
         answers: ["Mosquito", "Guerra", "Nome do criador", "Homenagem a uma cidade"],
         correctAnswer: "Mosquito"
+
+        question: "Qual das seguintes tags HTML é usada para criar um link?",
+        answers: ["<div>", "<img>", "<a>", "<p>"],
+        correctAnswer: "<a>"
       },
       // ... outras perguntas da Fase 1
     ],
