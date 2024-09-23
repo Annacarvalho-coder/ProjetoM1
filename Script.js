@@ -17,9 +17,9 @@ const questions = [
         correctAnswer: "<a>"
       },
       {
-        question: "",
-        answers: [""],
-        correctAnswer: ""
+        question: "Qual foi o primeiro navegador web a suportar a linguagem JavaScript?",
+        answers: ["Internet Explorer", "Netscape Navigator", "Google Chrome", "Mozilla Firefox"],
+        correctAnswer: "Netscape Navigator"
       }
       
     ],
