@@ -2,28 +2,74 @@ const questions = [
     // Fase 1
     [
       {
-        question: "Qual é a capital da França?",
-        answers: ["Londres", "Paris", "Roma", "Berlim"],
-        correctAnswer: "Paris"
+        question: "",
+        answers: [""],
+        correctAnswer: ""
       },
       {
-        question: "Qual é a origem da expressão bug?",
-        answers: ["Mosquito", "Guerra", "Nome do criador", "Homenagem a uma cidade"],
-        correctAnswer: "Mosquito"
-
+        question: "Qual foi a inspiração para a utilização do termo 'bug' para descrever erros em programas de computador?",
+        answers: ["Um problema em um circuito lógico", "Uma referência à Segunda Guerra Mundial", "Um inseto encontrado em um dos primeiros computadores", "Uma homenagem a um pioneiro da computação"],
+        correctAnswer: "Um inseto encontrado em um dos primeiros computadores"
+      },
+      {
         question: "Qual das seguintes tags HTML é usada para criar um link?",
         answers: ["<div>", "<img>", "<a>", "<p>"],
         correctAnswer: "<a>"
       },
-      // ... outras perguntas da Fase 1
+      {
+        question: "",
+        answers: [""],
+        correctAnswer: ""
+      }
+      
     ],
     // Fase 2
     [
       // Perguntas da Fase 2
+      {
+        question: "",
+        answers: [""],
+        correctAnswer: ""
+      },
+      {
+        question: "",
+        answers: [""],
+        correctAnswer: ""
+      },
+      {
+        question: "",
+        answers: [""],
+        correctAnswer: ""
+      },
+      {
+        question: "",
+        answers: [""],
+        correctAnswer: ""
+      }
     ],
     // Fase 3
     [
       // Perguntas da Fase 3
+      {
+        question: "",
+        answers: [""],
+        correctAnswer: ""
+      },
+      {
+        question: "Diferença entre hoisting de var, let e const?",
+        answers: ["var tem um comportamento mais permissivo, enquanto let e const introduzem regras mais rígidas para evitar erros comuns.", "O hoisting só ocorre com a palavra-chave var, sendo inexistente em let e const.", "O hoisting garante que todas as variáveis sejam inicializadas com o valor undefined.", "Nenhuma, apresenta a mesma função!"],
+        correctAnswer: "var tem um comportamento mais permissivo, enquanto let e const introduzem regras mais rígidas para evitar erros comuns."
+      },
+      {
+        question: "",
+        answers: [""],
+        correctAnswer: ""
+      },
+      {
+        question: "",
+        answers: [""],
+        correctAnswer: ""
+      }
     ]
 ];
   
