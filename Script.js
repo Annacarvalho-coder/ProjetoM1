@@ -2,9 +2,9 @@ const questions = [
     // Fase 1
     [
       {
-        question: "",
-        answers: [""],
-        correctAnswer: ""
+        question: "O que significa CSS?",
+        answers: ["Custom Style Sheets", "Cascading Style Sheets", "Creative Style Sheets", "Computer Style Sheets"],
+        correctAnswer: "Cascading Style Sheets"
       },
       {
         question: "Qual foi a inspiração para a utilização do termo 'bug' para descrever erros em programas de computador?",
@@ -27,33 +27,34 @@ const questions = [
     [
       // Perguntas da Fase 2
       {
-        question: "",
-        answers: [""],
-        correctAnswer: ""
+        question: "Qual linguagem de programação é conhecida como a 'linguagem da web'?",
+        answers: ["Python", "Java", "JavaScript", "Ruby"],
+        correctAnswer: "JavaScript"
       },
       {
-        question: "",
-        answers: [""],
-        correctAnswer: ""
+        question: "Qual protocolo é utilizado para transferir páginas web?",
+        answers: ["FTP", "SMTP", "HTTP", "TCP"],
+        correctAnswer: "HTTP"
       },
       {
-        question: "",
-        answers: [""],
-        correctAnswer: ""
+        question: "Em que ano foi lançado o primeiro site?",
+        answers: ["1990", "1991", "1992", "1993"],
+        correctAnswer: "1991"
       },
       {
-        question: "",
-        answers: [""],
-        correctAnswer: ""
+        question: "Qual elemento HTML é utilizado para definir um título principal?",
+        answers: ["<h1>", "<title>", "<header>", "<div>"],
+        correctAnswer: "<h1>"
       }
     ],
     // Fase 3
     [
       // Perguntas da Fase 3
+
       {
-        question: "",
-        answers: [""],
-        correctAnswer: ""
+        question: "Qual dos seguintes é um framework JavaScript popular para desenvolvimento de interfaces de usuário?",
+        answers:["Laravel", "Django", "React", "Flask"],
+        correctAnswer: "React"
       },
       {
         question: "Diferença entre hoisting de var, let e const?",
@@ -61,14 +62,14 @@ const questions = [
         correctAnswer: "var tem um comportamento mais permissivo, enquanto let e const introduzem regras mais rígidas para evitar erros comuns."
       },
       {
-        question: "",
-        answers: [""],
-        correctAnswer: ""
+        question: "Qual é a finalidade do atributo 'alt' em uma tag <img> no HTML?",
+        answers: ["Exibir texto alternativo se a imagem não carregar", "Modificar a posição da imagem", "Aumentar a velocidade de carregamento", "Mudar o formato da imagem"],
+        correctAnswer: "Exibir texto alternativo se a imagem não carregar"
       },
       {
-        question: "",
-        answers: [""],
-        correctAnswer: ""
+        question: "Qual das seguintes tecnologias é usada para armazenar dados no lado do cliente em uma página web?",      
+        answers: ["Cookies", "PHP", "SQL", "JSON"],
+        correctAnswer: "Cookies"
       }
     ]
 ];
@@ -167,7 +168,7 @@ if (currentQuestion === questions[currentPhase].length - 1) {
 
 loadQuestion();
 }
-//só funciona se errar tudo, quero imprementar para que se errar uma já tenha que reiniciar
+//só funciona se errar tudo, quero implementar para que se errar uma já tenha que reiniciar
 function resetQuiz() {
   currentPhase = 0;
   currentQuestion = 0;
