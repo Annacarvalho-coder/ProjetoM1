@@ -14,7 +14,7 @@
 #answers button {
   display: flex;
   flex-direction: column;
-  /* background-color: #af4cab; */
+  /*background-color: #bea8be;*/
   width: 50px;
   text-align: center;
   justify-content: center;
@@ -37,7 +37,7 @@ button {
 }
 
 .selected {
-  background-color: yellow; 
+  background-color: rgb(107, 23, 86); 
 }
 .correct {
   background-color: green;

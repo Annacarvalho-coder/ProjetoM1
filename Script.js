@@ -73,10 +73,12 @@ const questions = [
     ]
 ];
   
-
+let quizStarted = false;
 let currentPhase = 0;
 let currentQuestion = 0;
 let score = 0;
+let correctAnswersInPhase = 0;
+
 const totalQuestions = questions.flat().length;
 const resultDiv = document.getElementById('result');
 const submitButton = document.getElementById('submit');
@@ -98,6 +100,11 @@ questionObj.answers.forEach(answer => {
 submitButton.textContent = 'Responder';
 submitButton.style.display = 'block';
 nextButton.style.display = 'none';
+if (quizStarted) {
+  resultDiv.textContent = '';
+} else {
+  resultDiv.textContent = 'Clique em "Iniciar Quiz" para começar.';
+}
 }
 
 function selectAnswer(button) {
@@ -109,24 +116,40 @@ button.classList.add('selected');
 }
 
 function checkAnswer() {
-const selectedButton = document.querySelector('.selected');
-if (!selectedButton) {
+  const selectedButton = document.querySelector('.selected');
+  if (!selectedButton) {
     resultDiv.textContent = "Por favor, selecione uma resposta.";
     return;
-}
-const selectedAnswer = selectedButton.dataset.answer;
-if (selectedAnswer === questions[currentPhase][currentQuestion].correctAnswer) {
+  }
+  const selectedAnswer = selectedButton.dataset.answer;
+
+  if (selectedAnswer === questions[currentPhase][currentQuestion].correctAnswer) {
     selectedButton.classList.add('correct');
-    score++;
+    correctAnswersInPhase++;
     resultDiv.textContent = "Acertou!";
-} else {
+  } else {
     selectedButton.classList.add('incorrect');
     resultDiv.textContent = "Incorreto!";
-}
-submitButton.style.display = 'none';
-nextButton.style.display = 'block';
-}
+  }
+  score = calculateScore(correctAnswersInPhase);
 
+  submitButton.style.display = 'none';
+  nextButton.style.display = 'block';
+  const selectedButtons = document.querySelectorAll('.selected');
+  selectedButtons.forEach(button => button.classList.remove('selected'));   
+
+}
+//Isso aqui simplesmente não funciona, nem o console.log que deveria mostra o problema não funciona!
+function calculateScore(correctAnswers) {
+  console.log("Calculando a pontuação...");
+  console.log("correctAnswersInPhase:", correctAnswersInPhase);
+  console.log("totalQuestions:", totalQuestions);
+  const pointsPerCorrectAnswer = 10;
+  const totalPoints = correctAnswers * pointsPerCorrectAnswer;
+  return totalPoints;
+  
+}
+//no final apresentava uma mensagem de erro e agora nem finaliza
 function nextQuestion() {
 resultDiv.textContent = '';
 if (currentQuestion === questions[currentPhase].length - 1) {
@@ -134,25 +157,62 @@ if (currentQuestion === questions[currentPhase].length - 1) {
     if (currentPhase < questions.length) {
     currentQuestion = 0;
     } else {
-    resultDiv.textContent = `Parabéns! Você acertou ${score} de ${totalQuestions} questões.`;
+      resultDiv.textContent = `Parabéns! Você acertou ${correctAnswersInPhase} de ${questions[currentPhase].length} questões. Com ${score} pontos`;
     nextButton.style.display = 'none';
     return;
     }
 } else {
     currentQuestion++;
 }
+
 loadQuestion();
+}
+//só funciona se errar tudo, quero imprementar para que se errar uma já tenha que reiniciar
+function resetQuiz() {
+  currentPhase = 0;
+  currentQuestion = 0;
+  score = 0;
+  correctAnswersInPhase = 0;
+  loadQuestion();
+  resultDiv.textContent = "Você não acertou nenhuma pergunta. Tente novamente!";
+}
+
+function showFinalResult() {
+  resultDiv.textContent = `Parabéns! Você acertou ${correctAnswersInPhase} de ${questions[currentPhase].length} questões. Com ${score} pontos`;
+}
+//não está funcionando a parte de finalizar a 1 fase e dar a mensagem e depois iniciar a próxima
+if (quizStarted) {
+  if (currentPhase === questions.length - 1 && currentQuestion === questions[currentPhase].length - 1) {
+    // Fim do quiz
+    showFinalResult();
+    submitButton.style.display = 'none';
+    nextButton.style.display = 'none';
+  } else if (currentPhase === 0 && currentQuestion === questions[currentPhase].length - 1) {
+    // Fim da primeira fase
+    currentPhase++;
+    currentQuestion = 0;
+    correctAnswersInPhase = 0;
+    loadQuestion();
+    resultDiv.textContent = 'Parabéns! Você completou a primeira fase. Prossiga para a próxima.';
+  } else {
+    currentQuestion++;
+    loadQuestion();
+  }
+} else {
+  resultDiv.textContent = 'Clique em "Iniciar Quiz" para começar.';// esse é para quando erra e tem que reiniciar
 }
 
 submitButton.addEventListener('click', () => {
-if (submitButton.textContent === 'Iniciar Quiz') {
+  if (submitButton.textContent === 'Iniciar Quiz') {
+    quizStarted = true;
     currentPhase = 0;
     currentQuestion = 0;
     score = 0;
     loadQuestion();
-} else {
+    submitButton.textContent = 'Responder';
+  } else {
     checkAnswer();
-}
+  }
 });
 
 nextButton.addEventListener('click', nextQuestion);
