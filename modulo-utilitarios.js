@@ -1,3 +1,5 @@
+import { currentPhase, currentQuestion, score, correctAnswersInPhase } from './modulo-estado.js';
+
 let timeLeft = 60; // Tempo inicial em segundos
 let timerInterval;
 
@@ -38,3 +40,13 @@ export function loadProgress() {
     console.log('Progresso carregado!');
   }
 }
+
+export function displayResult(result) {
+    const resultDiv = document.getElementById('result');
+    if (resultDiv) {
+      resultDiv.textContent = result;
+    } else {
+      console.error("Elemento 'result' não encontrado.");
+    }
+  }
+  
