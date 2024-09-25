@@ -24,6 +24,11 @@
   margin-bottom: 20px;
 }
 
+/* Botão "Proximo" */
+#quiz-container #next {
+  display: none;
+}
+
 button {
   display: flex;
   align-items: center;
