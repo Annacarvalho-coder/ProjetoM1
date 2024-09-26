@@ -1,8 +1,9 @@
-import { startTimer, saveProgress, loadProgress } from './modulo-utilitarios.js';
+import { startTimer } from './modulo-utilitarios.js';
 import { questions } from './modulo-perguntas.js';
-import { displayQuestion, displayResult } from './modulo-interface.js';
-import { checkAnswer, nextQuestion, calculateScore, resetQuiz } from './modulo-logica.js';
-import { currentPhase, currentQuestion, score, correctAnswersInPhase } from './modulo-estado.js';
+import { displayQuestion } from './modulo-interface.js';
+import { checkAnswer, nextQuestion } from './modulo-logica.js';
+import { currentPhase, currentQuestion } from './modulo-estado.js';
+
 
 let quizStarted = false;
 
@@ -17,14 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitButton = document.getElementById('submit');
   const nextButton = document.getElementById('next');
 
-  submitButton.addEventListener('click', () => {
-    if (submitButton.textContent === 'Iniciar Quiz') {
-      startQuiz();
-    } else {
-      checkAnswer();
-    }
-  });
-
+submitButton.addEventListener('click', () => {
+  if (submitButton.textContent === 'Iniciar Quiz') {
+    startQuiz();
+  } else {
+    checkAnswer();
+  }
+ });
   nextButton.addEventListener('click', nextQuestion);
 });
 

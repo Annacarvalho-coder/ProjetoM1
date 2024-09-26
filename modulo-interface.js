@@ -1,8 +1,8 @@
 export function displayResult(result) {
     const resultDiv = document.getElementById('result');
     resultDiv.textContent = result ? 'Acertou!' : 'Errou!';
-  }
-  
+}
+  //essa é a que deveria chamar a função de checar a resposta, retornar
 export function displayQuestion(questionObj) {
     const questionElement = document.getElementById('question');
     const answersElement = document.getElementById('answers');
@@ -15,5 +15,5 @@ export function displayQuestion(questionObj) {
       button.textContent = answer;
       answersElement.appendChild(button);
     });
-  }
+}
   

@@ -40,13 +40,14 @@ export function loadProgress() {
     console.log('Progresso carregado!');
   }
 }
-
+/*
 export function displayResult(result) {
-    const resultDiv = document.getElementById('result');
-    if (resultDiv) {
-      resultDiv.textContent = result;
-    } else {
-      console.error("Elemento 'result' não encontrado.");
-    }
+  const resultDiv = document.getElementById('result');
+  if (resultDiv) {
+    resultDiv.textContent = result;
+  } else {
+    console.error("Elemento 'result' não encontrado.");
   }
+}*/
+
   
